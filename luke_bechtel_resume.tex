@@ -1,0 +1,198 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{xparse}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% \NewDocumentCommand{\resumeItem}{ m m O{}}{
+%   \item\small{
+%     \textbf{#1}{: #2 \vspace{-2pt}
+%       \IfValueTF{3}{\textit{\small#3}}{}
+%     }
+%   }
+% }
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{http://lukebechtel.com/}{\Large Luke Bechtel}} & Email : \href{mailto:luke@lukebechtel.com}{luke@lukebechtel.com}\\
+  \href{http://www.lukebechtel.com/}{http://www.lukebechtel.com/} & Mobile : +1-423-946-0524 \\
+\end{tabular*}
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Collider}{Chattanooga, TN}
+      {Cofounder, Head of Scientific Computing}{Dec 2015 - Present}
+      \resumeItemListStart
+        \resumeItem{Orchid System}
+          {Next-Generation hybrid 3D printer (SLA + Injection Molding). Wrote firmware for Orchid, including calibration interface, interfaces with motors, light-engines, and other actuators/transducers.}
+        \resumeItem{Smithy}
+          {In-Browser Interactive 3D print preparation UI, including custom shaders, part rotations, and 3D model feature selection tools.}
+        \resumeItem{Gardener}
+          {3D printer management API for print job tracking, 3D model management, and 3D print preparation.}
+        \resumeItem{Meshprep}
+          {Processing pipeline of geometric 3D printing preparation algorithms for hybrid 3D print process, and associated webservice.}
+        \resumeItem{Dynamic Thin Mold}
+          {Engine for converting arbitrary 3D geometries into material-efficient molds, compatible with hybrid SLA printing and Injection process}
+        \resumeItem{Support Structure}
+          {Algorithms to determine locations in need of structural support, and to generate said material-efficient supports for SLA 3D Print process.}
+        \resumeItem{Injection Geometry}
+          {Algorithms to generate material-efficient, fluid injection-related geometries for hybrid 3D Print injection process, including robust 3D clearanced pathfinding algorithms.}
+        \resumeItem{Raw-to-Repaired 3D Model Pipeline}
+          {Pipeline and associated service to repair and compress "dirty" user 3D model inputs.}
+        \resumeItem{Model Configuration Wizards}
+          {Algorithms to determine near-optimal part orientations and injection locations for compatibility with SLA and Injection processes.}
+        \resumeItem{Dynamic Mesh Test Suite}
+          {Test suite for Collider's Geometry Pipeline, involving determination of user-like input parameters dynamically per-model, and input/output reasonableness-checks.}
+        % \resumeItem{Grove Dashboard}
+        %   {3D printer management dashboard for print job controls and monitoring}
+        \resumeItem{Rowbot}
+          {Slackbot used for tracking status of running printers in Collider's fleet.}
+        % \resumeItem{Trippy}
+        %   {Suite of internal python tools for working with 3D meshes.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Vortext}{Oak Ridge, TN}
+      {Software Engineer}{March 2015 – January 2016}
+      \resumeItemListStart
+        \resumeItem{Document Clustering API}
+          {Code allowing mobile app to harness server-side document clustering algorithm developed at ORNL. The resultant app was accepted into the Gigtank startup accelerator program.}
+        \resumeItem{Startup Representative}
+          {Participated in Gigtank startup accelerator as technical representative, explaining the advantages of the document clustering algorithms to potential clients.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {University of Tennessee}{Knoxville, TN}
+      {Research Assistant}{May 2014 - September 2016}
+      \resumeItemListStart
+        \resumeItem{Neural Network Memory Optimization}
+          {Memory-swap optimization for hardware-targeted Neural Network architecture.}
+        \resumeItem{\textit{\href{http://neuromorphic.eecs.utk.edu/pdfs/2016-03-SoutheastCon.pdf}{Extensions and Enhancements for the DANNA Neuromorphic Architecture}}}
+          {Research on hardware-targeted Neural Networks. Researched prior work, wrote IEEE-style synopsis of findings, edited paper for IEEE standards.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Keurig}{Knoxville, TN}
+      {Controls Engineering Co-Op}{May 2013 - December 2014}
+      \resumeItemListStart
+        \resumeItem{Degas Rack Augmentation}
+          {Lead developer for large-item inventory management and visualization system. Resulted in ROI of 400\% over 1 year period.}
+        \resumeItem{Barcode Generator}
+          {A spreadsheet addon which queried production databases for barcode-related data, and generated said barcode for printing.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Trimesh}
+      {Open-Source 3D Mesh processing library. Early adopter. Added marching cubes and vertex bookkeeping.}
+    \resumeSubItem{Visualisa}
+      {Open-Source in-browser 3D Audio Visualization website.}
+    \resumeSubItem{Dreamylabs}
+      {Open-Source .ipynb for object-detection-segmented Deep Dreams on user-provided photos.}
+    \resumeSubItem{React 360 Example Planets}
+      {Open-Source Demonstration app for React 360 (Facebook library for VR).}
+  \resumeSubHeadingListEnd
+
+%
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills \textit{\small{(ordered by desc. mastery)}}}}
+ \resumeSubHeadingListStart
+     \resumeSubItem{Languages}{: Python, Javascript, C++, C, C\#, Ruby, Golang, Bash, GLSL, Julia}
+     % \hfill
+     \resumeSubItem{Technologies}{: Numpy, Three.js, React(+360), Django, Trimesh, WebGL, Rails, Graphql, Keras, Pytorch, Tensorflow}
+     \resumeSubItem{Infra Tools}{: Docker(+Compose), Pytest(+Pylint,+Cov), CircleCI, Cucumber, Jest }
+     % \resumeSubItem{Hardware}{: I2C, Raspberry Pi, Arduino}
+     % \textbf{Concepts}{: Deep Learning, Neural Networks, }
+ \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+% \section{Education}
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {Georgia Institute of Technology}{Atlanta, GA}
+%       {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
+%     \resumeSubheading
+%       {Birla Institute of Technology and Science}{Pilani, India}
+%       {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
+%   \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}
