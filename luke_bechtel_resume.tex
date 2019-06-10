@@ -96,52 +96,43 @@
       {Collider}{Chattanooga, TN}
       {Cofounder, Head of Scientific Computing}{Dec 2015 - Present}
       \resumeItemListStart
-        \resumeItem{Orchid System}
-          {Next-Generation hybrid 3D printer (SLA + Injection Molding). Wrote firmware for Orchid, including calibration interface, interfaces with motors, light-engines, and other actuators/transducers.}
-        \resumeItem{Smithy}
-          {In-Browser Interactive 3D print preparation UI, including custom shaders, part rotations, and 3D model feature selection tools.}
-        \resumeItem{Gardener}
-          {3D printer management API for print job tracking, 3D model management, and 3D print preparation.}
+        \resumeItem{Orchid}
+          {Next-Generation SLA-hybrid 3D printer. Wrote firmware for Orchid, including calibration interface, state machine manager, time-sensitive systems, interfaces with motors, light-engines, and other actuators/transducers. Firmare described was responsible for printing hundreds of customer parts over many machines.}
         \resumeItem{Meshprep}
-          {Processing pipeline of geometric 3D printing preparation algorithms for hybrid 3D print process, and associated webservice.}
-        \resumeItem{Dynamic Thin Mold}
-          {Engine for converting arbitrary 3D geometries into material-efficient molds, compatible with hybrid SLA printing and Injection process}
-        \resumeItem{Support Structure}
-          {Algorithms to determine locations in need of structural support, and to generate said material-efficient supports for SLA 3D Print process.}
-        \resumeItem{Injection Geometry}
-          {Algorithms to generate material-efficient, fluid injection-related geometries for hybrid 3D Print injection process, including robust 3D clearanced pathfinding algorithms.}
+          {Core processing pipeline of geometric preparation algorithms for hybrid 3D print process, and associated webservice. Researched, iterated on, designed and implemented algorithms for converting arbitrary 3D geometries into material-efficient molds, generating connected fluid injection network geometries given fluid constraints, identifying surfaces in need of structural support, and generating structural supports. Additionally, designed and implemented algorithms to recommend user-selected part orientations and feature placement. Described work resulted in a pipeline which automatically processed hundreds of 3D models into printable files which were printed into customer parts, representing tens of thousands of dollars in revenue.}
+        \resumeItem{Smithy}
+          {Wrote in-browser interactive 3D print preparation UI, including custom WebGL shaders, part rotations, and 3D model feature selection tools. Resulted in a qualitative increase in user print preparation successes.}
+        \resumeItem{Gardener}
+          {3D printer management API for print job tracking, model management, and print preparation. Was responsible for managing data and operations for hundreds of print jobs, from file upload to final layer printed.}
         \resumeItem{Raw-to-Repaired 3D Model Pipeline}
-          {Pipeline and associated service to repair and compress "dirty" user 3D model inputs.}
-        \resumeItem{Model Configuration Wizards}
-          {Algorithms to determine near-optimal part orientations and injection locations for compatibility with SLA and Injection processes.}
+          {Pipeline and associated service to repair and compress "dirty" user 3D model inputs. Negotiated with vendors, implemented webservice, configuration, and scripts around vendor-provided API. Allowed hundreds of customer geometries to be cleaned automatically, without user intervention.}
         \resumeItem{Dynamic Mesh Test Suite}
-          {Test suite for Collider's Geometry Pipeline, involving determination of user-like input parameters dynamically per-model, and input/output reasonableness-checks.}
+          {Test suite for Collider's geometry pipeline, involving determination of user-like input parameters dynamically per-model, and input/output sanity-checks. Resulted in pre-deployment identification of several geometry pipeline regressions.}
         % \resumeItem{Grove Dashboard}
         %   {3D printer management dashboard for print job controls and monitoring}
         \resumeItem{Rowbot}
-          {Slackbot used for tracking status of running printers in Collider's fleet.}
+          {Slackbot used for notifications and tracking status of printer fleet. Allowed 24/7 monitoring for staff.}
         % \resumeItem{Trippy}
         %   {Suite of internal python tools for working with 3D meshes.}
+        % \resumeItem{Snapshot Tool}
+        %   {Lambda service that was invoked to perform model snapshots on model upload.}
       \resumeItemListEnd
-
     \resumeSubheading
       {Vortext}{Oak Ridge, TN}
       {Software Engineer}{March 2015 – January 2016}
       \resumeItemListStart
         \resumeItem{Document Clustering API}
-          {Code allowing mobile app to harness server-side document clustering algorithm developed at ORNL. The resultant app was accepted into the Gigtank startup accelerator program.}
-        \resumeItem{Startup Representative}
-          {Participated in Gigtank startup accelerator as technical representative, explaining the advantages of the document clustering algorithms to potential clients.}
+          {API for server-side document clustering algorithm developed at ORNL. The resultant app was accepted into a startup accelerator, in which I participated as technical representative.}
       \resumeItemListEnd
 
     \resumeSubheading
       {University of Tennessee}{Knoxville, TN}
       {Research Assistant}{May 2014 - September 2016}
       \resumeItemListStart
-        \resumeItem{Neural Network Memory Optimization}
-          {Memory-swap optimization for hardware-targeted Neural Network architecture.}
-        \resumeItem{\textit{\href{http://neuromorphic.eecs.utk.edu/pdfs/2016-03-SoutheastCon.pdf}{Extensions and Enhancements for the DANNA Neuromorphic Architecture}}}
-          {Research on hardware-targeted Neural Networks. Researched prior work, wrote IEEE-style synopsis of findings, edited paper for IEEE standards.}
+        \resumeItem{FPGA-Accelerated Neural Network Research}
+          {Implemented memory-swap optimization for Neural Network-on-FPGA architecture. Coauthor of \textit{
+            \href{http://neuromorphic.eecs.utk.edu/pdfs/2016-03-SoutheastCon.pdf}{Extensions and Enhancements for the DANNA Neuromorphic Architecture}
+          }, performed background research and wrote IEEE-style synopsis of findings.}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -149,37 +140,37 @@
       {Controls Engineering Co-Op}{May 2013 - December 2014}
       \resumeItemListStart
         \resumeItem{Degas Rack Augmentation}
-          {Lead developer for large-item inventory management and visualization system. Resulted in ROI of 400\% over 1 year period.}
-        \resumeItem{Barcode Generator}
-          {A spreadsheet addon which queried production databases for barcode-related data, and generated said barcode for printing.}
+          {Lead developer on large-item inventory management and physical signaling system for high-throughput production facility. Resulted in ROI of 400\% over 1 year period.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 
 %-----------PROJECTS-----------------
-\section{Projects}
+\section{Personal Projects}
   \resumeSubHeadingListStart
     \resumeSubItem{Trimesh}
       {Open-Source 3D Mesh processing library. Early adopter. Added marching cubes and vertex bookkeeping.}
     \resumeSubItem{Visualisa}
       {Open-Source in-browser 3D Audio Visualization website.}
     \resumeSubItem{Dreamylabs}
-      {Open-Source .ipynb for object-detection-segmented Deep Dreams on user-provided photos.}
+      {Open-Source .ipynb using State-of-the-Art image object identification algos (Deeplab) to edit photos.}
     \resumeSubItem{React 360 Example Planets}
       {Open-Source Demonstration app for React 360 (Facebook library for VR).}
   \resumeSubHeadingListEnd
 
 %
 %--------PROGRAMMING SKILLS------------
-\section{Programming Skills \textit{\small{(ordered by desc. mastery)}}}}
+\section{Technical Skills \textit{\small{(ordered by desc. mastery)}}}}
  \resumeSubHeadingListStart
-     \resumeSubItem{Languages}{: Python, Javascript, C++, C, C\#, Ruby, Golang, Bash, SQL, GLSL, Julia}
+     \resumeSubItem{Langs}{Python, Javascript, C++, C, C\#, Ruby, Golang, Bash, SQL, PHP, GLSL, Julia}
      % \hfill
-     \resumeSubItem{Technologies}{: Numpy, Three.js, React(+360), Django, Trimesh, WebGL, Rails, Graphql, Keras, Pytorch, Tensorflow}
-     \resumeSubItem{Infra Tools}{: Docker(+Compose), Pytest(+Pylint,+Cov), CircleCI, Cucumber, Jest }
+     \resumeSubItem{Tech}{Numpy, Three.js, React(+360), Django, Trimesh, Scipy, Pandas, Graphql, WebGL, Rails, Keras, Tensorflow}
+     \resumeSubItem{Infra}{Git, Docker(+Compose), Pytest(+Pylint, +Cov), CircleCI, Cucumber, Jest }
      % \resumeSubItem{Hardware}{: I2C, Raspberry Pi, Arduino}
      % \textbf{Concepts}{: Deep Learning, Neural Networks, }
+     % \resumeSubItem{Web Technologies}{: HTML, CSS, ...}
+     %\resumeSubItem{Platforms}{AWS (Lambda, EC2), Google Cloud}
  \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
