@@ -1,5 +1,5 @@
 # What?
-A one-page attempt to condense every piece of me that is relevant to my professional life.
+An attempt to condense every piece of me that is relevant to my professional life into one-page of text. 😅
 
 # Source 🙏
 Forked from Sourabh Bajaj's excellent resume generation latex.
