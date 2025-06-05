@@ -3,3 +3,9 @@ Archive/
 
 # builds
 build/
+
+*.aux
+*.log
+*.out
+
+.DS_Store

@@ -15,7 +15,9 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
+\usepackage{ifthen}
+\usepackage{multicol}
+
 \usepackage{xparse}
 
 \pagestyle{fancy}
@@ -45,10 +47,25 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[2]{
-  \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
+  \ifthenelse{\equal{#2}{}}{
+    \item\small{
+      \textbf{#1}
+    }
+  }{
+    \item\small{
+      \textbf{#1}{: #2 \vspace{-2pt}}
+    }
   }
 }
+
+% \newcommand{\resumeItemWithSubitems}[3]{
+%   \item\small{
+%     \textbf{#1}{: #2 \vspace{-2pt}}
+%   }
+%   \begin{itemize}
+%     #3
+%   \end{itemize}
+% }
 
 % \NewDocumentCommand{\resumeItem}{ m m O{}}{
 %   \item\small{
@@ -66,7 +83,10 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[2]{
+  \resumeItem{#1}{#2}
+  % \vspace{-2pt}
+}
 
 \renewcommand{\labelitemii}{$\circ$}
 
@@ -75,6 +95,13 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+
+% Examples:
+% Resume nested item with subitems
+%  \resumeItem{stuff}{wow}
+% \resumeItemListStart
+% \resumeSubItem{stuff}{stuff}
+% \resumeItemListEnd
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -83,15 +110,352 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://lukebechtel.com/}{\Large Luke Bechtel}} & Email : \href{mailto:luke@lukebechtel.com}{luke@lukebechtel.com}\\
-  \href{http://www.lukebechtel.com/}{http://www.lukebechtel.com/} & Mobile : +1-423-946-0524 \\
+  \textbf{\href{http://lukebechtel.com/}{\Large Luke Bechtel}} & \href{mailto:luke@lukebechtel.com}{luke@lukebechtel.com}\\
+  \href{http://www.lukebechtel.com/}{http://www.lukebechtel.com} & Github: \href{https://github.com/Marviel}{@Marviel} \\
+  & Twitter: \href{https://twitter.com/linkbechtel}{@linkbechtel} \\
 \end{tabular*}
+
+%-----------PROFESSIONAL SUMMARY-----------------
+\section{Professional Summary}
+\begin{itemize}[leftmargin=*]
+  \item AI/ML Technical Founder with 12+ years building production systems, specializing in LLM orchestration, agentic AI workflows, and full-stack development. Currently bootstrapping EdTech startup while running profitable AI consulting practice.
+  \item Proven track record leading technical teams from prototype to production, with expertise spanning real-time multiplayer systems, microservice architectures, and modern AI pipeline development.
+  \item Deep experience in both hands-on engineering and business leadership, successfully managing cross-functional teams, client relationships, and product strategy in fast-paced startup environments.
+\end{itemize}
 
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
   \resumeSubHeadingListStart
+  
+  \resumeSubheading
+  {Reasonote}{Remote}
+  {Founder / CEO}{May 2024 - Present}
+  \resumeItemListStart
+    \resumeItem{AI-Powered Personalized Learning Platform}
+      {Bootstrapped EdTech startup creating on-demand, fully personalized learning experiences. Sole technical founder building end-to-end AI education platform. Achieved 1000+ users, generated 4000+ personalized lessons, and successful Product Hunt launch.}
+    
+    \resumeItem{Multi-LLM Orchestration Pipeline}
+      {Designed and implemented sophisticated AI pipeline integrating OpenAI, Anthropic, Gemini, and Llama models. Built custom infrastructure layer on top of Vercel AI SDK enabling structured reasoning traces via JSON, efficient context injection, and streamlined frontend AI calls.}
+      \resumeItemListStart
+        \resumeSubItem{Learning Pathway Generation}{LLM-generated DAGs for personalized learning paths with classical ML algorithms for user navigation and topic suggestion.}
+        \resumeSubItem{Agentic Content Creation}{Multi-step self-looping agents generating diverse activity types: flashcards, multiple choice, short answer, roleplay activities, and diagrams.}
+        \resumeSubItem{Real-time Podcast Generation}{Streaming text-to-speech pipeline with just-in-time generation and real-time audio streaming capabilities.}
+        \resumeSubItem{Personalized Context Injection}{User profile-aware AI calls providing tailored educational experiences across all platform interactions.}
+      \resumeItemListEnd
+      \vspace{5pt}
 
+    \resumeItem{Full-Stack Platform Development}
+      {Single-handedly architected and developed complete learning platform using modern tech stack. Solved complex technical challenges around real-time content generation and streaming delivery.}
+      \resumeItemListStart
+        \resumeSubItem{Real-time Learning Activities}{Implemented gradual streaming of Duolingo-style activities using streaming API calls and sophisticated model orchestration techniques.}
+        \resumeSubItem{Vector-Powered Knowledge Base}{Integrated PGVector for semantic search and content relationships within generated learning materials.}
+        \resumeSubItem{Scalable Architecture}{Built responsive, real-time platform supporting concurrent lesson generation and user progress tracking.}
+      \resumeItemListEnd
+      \vspace{5pt}
+
+    \resumeItem{LLM-Driven Grading Pipeline}
+      {Developed automated assessment system for evaluating student responses across diverse activity types. Built sophisticated prompt engineering framework for consistent, fair, and detailed feedback generation.}
+      \resumeItemListStart
+        \resumeSubItem{Multi-Modal Assessment}{Automated grading for text responses, code submissions, creative writing, and complex reasoning tasks using specialized LLM prompts and evaluation criteria.}
+        \resumeSubItem{Rubric-Based Evaluation}{Dynamic rubric generation and application ensuring consistent scoring standards across different subjects and difficulty levels.}
+        \resumeSubItem{Feedback Generation}{Contextual, constructive feedback generation providing specific improvement suggestions and explanations for scoring decisions.}
+        \resumeSubItem{Quality Assurance}{Built validation mechanisms including confidence scoring, bias detection, and human oversight integration for assessment accuracy.}
+      \resumeItemListEnd
+      \vspace{5pt}
+
+    \resumeItem{Product \& Business Leadership}
+      {Led all aspects of product strategy, go-to-market execution, and marketing for bootstrapped startup. Differentiated through fully generated content approach rather than content aggregation.}
+      \resumeItemListStart
+        \resumeSubItem{Product Strategy}{Developed vision for on-demand, personalized course generation serving diverse learning needs and styles.}
+        \resumeSubItem{Team Leadership}{Managed team of 2-4 across product development lifecycle from conception to open-source release.}
+        \resumeSubItem{Open Source Transition}{Successfully transitioned platform to open-source model to maximize educational accessibility and community adoption.}
+      \resumeItemListEnd
+      \vspace{5pt}
+    
+    \resumeItem{Key Skills Used}{}
+    \vspace{-5pt}
+    \begin{multicols}{4}
+        \resumeItemListStart
+          \resumeSubItem{Next.js}{}
+          \resumeSubItem{React}{}
+          \resumeSubItem{Typescript}{}
+        \resumeItemListEnd
+      \columnbreak
+        \resumeItemListStart
+          \resumeSubItem{LLMs}{}
+          \resumeSubItem{AI Orchestration}{}
+          \resumeSubItem{Vercel AI SDK}{}
+        \resumeItemListEnd
+      \columnbreak
+        \resumeItemListStart
+          \resumeSubItem{Postgres}{}
+          \resumeSubItem{PGVector}{}
+          \resumeSubItem{Bun}{}
+        \resumeItemListEnd
+      \columnbreak
+        \resumeItemListStart
+          \resumeSubItem{EdTech}{}
+          \resumeSubItem{Product Strategy}{}
+        \resumeItemListEnd
+    \end{multicols}
+    \vspace{-5pt}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Positive Sum Products}{Remote}
+  {Founder / CEO}{May 2024 - Present}
+  \resumeItemListStart
+    \resumeItem{AI/ML Consulting \& Pipeline Development}
+      {Founded specialized consulting firm delivering custom AI/ML solutions for enterprise clients while bootstrapping Reasonote. Built sophisticated LLM pipelines combining agentic and traditional approaches for diverse business applications. Led end-to-end project delivery from requirements gathering to production deployment.}
+    
+    \resumeItem{Content Extraction \& Intelligence Systems}
+      {Developed advanced content extraction pipelines for processing email communications and generating structured business intelligence. Built intelligent parsing systems using LLMs for automated data extraction and actionable insights generation. Improved processing efficiency by 90\% and accuracy by 80\%.}
+      \resumeItemListStart
+        \resumeSubItem{Email Communication Mining}{Automated extraction of insights, sentiment, and actionable data from email communications, customer support threads, and business correspondence.}
+        \resumeSubItem{Structured Data Generation}{LLM-powered transformation of unstructured email content into structured business intelligence and analytics-ready datasets.}
+        \resumeSubItem{Automated LLM Suggestions \& Nudges}{Built intelligent suggestion systems providing automated recommendations and action nudges based on email content analysis and extracted insights.}
+        \resumeSubItem{Entity Extraction \& Merging}{Advanced entity recognition and merging systems for identifying and consolidating business entities, contacts, and key information across email communications.}
+      \resumeItemListEnd
+      \vspace{5pt}
+
+    \resumeItem{Agentic Coding Workflows \& Automation}
+      {Pioneered agentic AI systems for automated software development workflows. Created self-improving code generation and review systems that adapt to project requirements and coding standards.}
+      \resumeItemListStart
+        \resumeSubItem{Autonomous Code Generation}{Multi-agent systems for automated feature development, bug fixing, and code refactoring using collaborative LLM agents with specialized roles.}
+        \resumeSubItem{Intelligent Code Review}{Automated code review agents providing context-aware feedback, security analysis, and performance optimization suggestions.}
+        \resumeSubItem{Self-Healing Systems}{Agentic monitoring and repair systems that automatically detect, diagnose, and fix common code issues and deployment problems.}
+        \resumeSubItem{Development Workflow Optimization}{End-to-end automation of development processes including requirements analysis, architecture planning, implementation, and testing coordination.}
+      \resumeItemListEnd
+      \vspace{5pt}
+
+    \resumeItem{Enterprise AI Strategy \& Implementation}
+      {Consulted with enterprise clients on AI adoption strategies, technical architecture decisions, and implementation roadmaps. Delivered measurable ROI through custom AI solutions integrated with existing business processes.}
+      \resumeItemListStart
+        \resumeSubItem{Technical Leadership}{Led cross-functional teams in designing and implementing AI solutions addressing specific business challenges and operational efficiency goals.}
+        \resumeSubItem{Architecture \& Integration}{Designed scalable AI architectures integrating with legacy systems, ensuring security compliance and performance requirements.}
+        \resumeSubItem{Client Success}{Delivered consulting engagements resulting in significant productivity improvements and cost reductions for enterprise clients.}
+      \resumeItemListEnd
+      \vspace{5pt}
+    
+    \resumeItem{Key Skills Used}{}
+    \vspace{-5pt}
+    \begin{multicols}{4}
+        \resumeItemListStart
+          \resumeSubItem{LLM Orchestration}{}
+          \resumeSubItem{Agentic AI}{}
+          \resumeSubItem{Python}{}
+        \resumeItemListEnd
+      \columnbreak
+        \resumeItemListStart
+          \resumeSubItem{NLP/NER}{}
+          \resumeSubItem{Content Extraction}{}
+          \resumeSubItem{Pipeline Automation}{}
+        \resumeItemListEnd
+      \columnbreak
+        \resumeItemListStart
+          \resumeSubItem{Enterprise Architecture}{}
+          \resumeSubItem{Consulting}{}
+          \resumeSubItem{Code Generation}{}
+        \resumeItemListEnd
+      \columnbreak
+        \resumeItemListStart
+          \resumeSubItem{Business Intelligence}{}
+          \resumeSubItem{Client Delivery}{}
+        \resumeItemListEnd
+    \end{multicols}
+    \vspace{-5pt}
+  \resumeItemListEnd
+
+  \resumeSubheading
+  {Regscale}{Remote}
+  {Principal AI/ML Engineer}{April 2023 - June 2024}
+  \resumeItemListStart
+    \resumeItem{Extractor -- Document Corpus Extraction Tool}
+      {Automated mapping from Document Corpus onto Q\&A Forms. Sole designer \& developer.}
+    \resumeItem{Auditor -- Evaluation Tool}
+      {Automated evaluation of document corpus against various eval metrics.}
+    \resumeItem{Author}
+      {Automated creation of Q\&A forms from a document corpus.}
+    \resumeItem{RegML Libraries}
+      {Cross-platform Typescript library for building, evaluating, and orchestrating LLMs. Lead designer \& developer. Features include:}
+      \resumeItemListStart
+        \resumeSubItem{Server}{Built server for LLM orchestration, evaluation, and management. Built custom LLM providers for OpenAI, Anthropic, Azure OpenAI.}
+        \resumeSubItem{Seamless Server-Client LLM Delegation}{Allows for easy delegation of LLM work to a remote server, while still allowing for local LLM development and testing.}
+        \resumeSubItem{Cross-Platform}{Supporting Desktop, Mobile, Tablet, Chrome, Firefox, Safari, Edge}
+        \resumeSubItem{Plugin architecture}{Allows for easy addition of new LLM providers, data sources, and evaluation metrics.}
+        \resumeSubItem{LLM Filtering}{Evaluated LLMs based on a variety of criteria, and allowed for easy selection of the best LLM.}
+      \resumeItemListEnd
+      \vspace{5pt}
+    
+    \resumeItem{Key Skills Used}{}
+    \vspace{-5pt}
+    \begin{multicols}{5}
+        \resumeItemListStart
+          \resumeSubItem{React}{}
+          \resumeSubItem{Typescript}{}
+        \resumeItemListEnd
+      \columnbreak
+        \resumeItemListStart
+          \resumeSubItem{LLMs}{}
+          \resumeSubItem{Node.js}{}
+        \resumeItemListEnd
+      \columnbreak
+        \resumeItemListStart
+          \resumeSubItem{Postgres}{}
+          \resumeSubItem{Embeddings}{}
+        \resumeItemListEnd
+      \columnbreak
+        \resumeItemListStart
+          \resumeSubItem{Azure}{}
+          \resumeSubItem{AWS}{}
+        \resumeItemListEnd
+    \end{multicols}
+    \vspace{-5pt}
+  \resumeItemListEnd
+    \resumeSubheading
+      {Revaly}{Remote}
+      {Director of Engineering}{Oct 2020 - April 2023}
+      \resumeItemListStart
+
+      % \resumeItem{Extractor}
+
+      % My individual contributions (so far):
+      % - Personally wrote original application prototype with React + Websocket layer.
+      % - Led fully-remote development team of 6 from concept application, to production-quality product.
+      % - Led most aspects of product development -- including:
+      %  - Creation & maintenance of internal / external feedback gathering systems, triaging procedures, regular check-ins, sprint planning & retros.
+      %  - Proactively working with Product Design, Marketing, Sales, Bizdev, Engineering to construct reasonable roadmaps given constraints, supporting both near-term and long-term bets.
+      % - Responsible for overall structure of multi-tired real-time microservice & devops architecture including:
+      %  - Deploying & managing multiple kubernetes environments
+      %  - Multi-Cloud: Including Cost management, service comparisons, final decisionmaking.
+      %  - Monorepo / Microservice codebase design, & implementation
+      %  - Realtime websocket infrastructure
+      %  - Database infrastructure, including replicas for business analytics & automated backups.
+      %  - Self-Serve billing
+      %  - 3rd party integrations (Stripe, Twilio, Slack, Microsoft Teams)
+      %  - Security compliance -- SOC2
+      % - Hiring & attracting high quality developers
+      % - Creating and managing relationships with software vendors, & external software contractors.
+      
+      
+        \resumeItem{Realtime Multiplayer 3D Design Review Webapp}
+          {Collaborative, Real-time 3D Design Review Webapp (Imagine Google Docs + Github + Miro for 3D). Original author of prototype. Directed a team of 6 
+           (across Dev \& Design) to build into production-ready B2B / Prosumer SaaS product. Features include:}
+           \resumeItemListStart
+            \resumeSubItem{Cross-Platform Webapp}{Supporting Desktop, Mobile, Tablet, Chrome, Firefox, Safari, Edge}
+            \resumeSubItem{Real-time Multiplayer}{Real-time User Position + Cursor Sharing, Real-time UI Updates}
+            \resumeSubItem{Video Chat}{Embedded live multi-user video chat up to 10 users.}
+            \resumeSubItem{3D Models}{3D Model Upload, Conversion between multiple Industry Standard 3D File Types, Secure 3D File Streaming}
+            \resumeSubItem{2D Document Viewing}{Ability to view and leave 2D-positional comments on PDFs \& Images}
+            \resumeSubItem{Permissions}{Tiered Permissions Managment \& Fine-Grained Sharing at Multiple Levels (Editor, Commentor, Viewer)}
+            \resumeSubItem{Annotations}{Intuitive Feedback via 3D / Annotations, Rich Text Messaging (including @mentions, Embedded Images, \& Reactions)}
+            \resumeSubItem{3D Tools}{3D Measurement -- Edge and Point-to-Point, Plane Cutting, Face \& Edge Selection}
+            \resumeSubItem{Settings}{Customizable Settings Self-Service Billing, User Organizations, Real-time Notifications with Personal Notification Settings}
+            \resumeSubItem{Notifications}{Real-time Notifications with Personal Notification Settings}
+            \resumeSubItem{Organizations}{Groups of Users and Assets with Customizable Permissions and Settings}
+            \resumeSubItem{Billing}{Both Self-Service \& Enterprise Billing using Stripe}
+          \resumeItemListEnd
+        
+        \resumeItem{System Design \& Implementation}
+          {Ultimately responsible for final product, overall structure, \& implementation of multi-tired real-time microservice \& devops architecture including:}
+          \resumeItemListStart
+            \resumeSubItem{Realtime Synchronization System}{Designed and implemented real-time synchronization system using Graphql, Postgres Real-Time Replication, and Websockets.}
+            \resumeSubItem{Frontend Infrastructure}{Designed and implemented frontend infrastructure using React, Typescript, Yarn Workspaces.}
+            \resumeSubItem{Database Infrastructure}{Multi-environment Postgresql database setup, including automated migrations, and read-only business analytics replica using native Postgres replication functionality.}
+            \resumeSubItem{Cloud Infrastructure}{Including Cost management, service comparisons, final decisionmaking.}
+            \resumeSubItem{Devops / Codebase Infrastructure}{Monorepo / Microservice codebase design, developer automation pipelines with separated development, staging, and production environments.}
+            \resumeSubItem{Cluster Infrastructure}{Deploying \& managing multiple kubernetes environments in AKS, including secrets management, interfaces with external data sources, cron-jobs, and monitoring with Istio \& Grafana.}
+          \resumeItemListEnd
+          \vspace{5pt}
+        \resumeItem{Startup Team Leadership}
+          {Led fully-remote product team of 6 from concept application, to production-quality product. Led many aspects of product development -- including:}
+          \resumeItemListStart
+            %  Creation \& maintenance of internal / external feedback gathering systems, triaging procedures, regular check-ins, sprint planning \& retros. Proactively working with Product Design, Marketing, Sales, Bizdev, Engineering to construct reasonable roadmaps given constraints, supporting both near-term and long-term bets.
+            \resumeSubItem{Product Development}{Created \& maintained internal / external feedback gathering systems, triage procedures, regular check-ins, sprint planning \& retros. Led feedback gathering process from all parties CEO, Design, Marketing, Sales, Bizdev, Engineering to construct reasonable roadmaps given constraints, supporting both near-term and long-term bets.}
+            \resumeSubItem{Team Management}{Hiring, onboarding, training, and managing a fully-remote team of 6.}
+            \resumeSubItem{Product Design}{Responsible for working with Design to create a consistent, intuitive, and user-friendly experience across all platforms.}
+            \resumeSubItem{Marketing / Sales}{Working with Marketing / Sales to consistently respond to customer feedback and market demand.}
+            \resumeSubItem{Business Development}{Meeting with potential customers to understand their needs, and reviewing possible partnerships.}
+            \resumeSubItem{3rd Party Relationships}{Negotiating with 3rd party vendors \& service providers to scope and manage special projects requiring outside expertise.}
+            \resumeSubItem{Customer Support}{Responding to customer support requests, and working with the team to improve the customer experience based on feedback.}
+          \resumeItemListEnd
+          \vspace{5pt}
+          % \begin{multicols}{2}
+          %     \resumeItemListStart
+          %       \resumeSubItem{React}{}
+          %       \resumeSubItem{Typescript}{}
+          %     \resumeItemListEnd
+          %   \columnbreak
+          %     \resumeItemListStart
+          %       \resumeSubItem{GraphQL}{}
+          %       \resumeSubItem{Node.js}{}
+          %     \resumeItemListEnd
+          % \end{multicols}
+          % \vspace{-5pt}
+        % \resumeItem{Engineering}
+
+
+        % My individual contributions (so far):
+        % - Personally wrote original application prototype with React + Websocket layer.
+        % - Led fully-remote development team of 6 from concept application, to production-quality product.
+        % - Led most aspects of product development -- including:
+        %  - Creation & maintenance of internal / external feedback gathering systems, triaging procedures, regular check-ins, sprint planning & retros.
+        %  - Proactively working with Product Design, Marketing, Sales, Bizdev, Engineering to construct reasonable roadmaps given constraints, supporting both near-term and long-term bets.
+        % - Responsible for overall structure of multi-tired real-time microservice & devops architecture including:
+        %  - Deploying & managing multiple kubernetes environments
+        %  - Multi-Cloud: Including Cost management, service comparisons, final decisionmaking.
+        %  - Monorepo / Microservice codebase design, & implementation
+        %  - Realtime websocket infrastructure
+        %  - Database infrastructure, including replicas for business analytics & automated backups.
+        %  - Self-Serve billing
+        %  - 3rd party integrations (Stripe, Twilio, Slack, Microsoft Teams)
+        %  - Security compliance -- SOC2
+        % - Hiring & attracting high quality developers
+        % - Creating and managing relationships with software vendors, & external software contractors.
+        
+        
+          \resumeItem{Key Skills Used}{}
+          \vspace{-5pt}
+          \begin{multicols}{5}
+              \resumeItemListStart
+                \resumeSubItem{React}{}
+                \resumeSubItem{Typescript}{}
+              \resumeItemListEnd
+            \columnbreak
+              \resumeItemListStart
+                \resumeSubItem{GraphQL}{}
+                \resumeSubItem{Node.js}{}
+              \resumeItemListEnd
+            \columnbreak
+              \resumeItemListStart
+                \resumeSubItem{Postgres}{}
+                \resumeSubItem{Kubernetes}{}
+              \resumeItemListEnd
+            \columnbreak
+              \resumeItemListStart
+                \resumeSubItem{Three.js}{}
+                \resumeSubItem{Redux}{}
+              \resumeItemListEnd
+            \columnbreak
+              \resumeItemListStart
+                \resumeSubItem{Azure}{}
+                \resumeSubItem{AWS}{}
+              \resumeItemListEnd
+          \end{multicols}
+          \vspace{-5pt}
+      \resumeItemListEnd 
+    \resumeSubheading
+      {Cadre5 (Oak Ridge National Laboratory)}{Knoxville, TN}
+      {Software Engineer}{Aug 2019 - Oct 2020}
+      \resumeItemListStart
+        \resumeItem{Ground Control System For Remote Vehicles}
+          {Designed and implemented a "Google Earth"-style remote vehicle control interface.}
+        \resumeItem{Waterfall Diagram for Radiation Data}
+          {Designed and implemented an in-browser "waterfall diagram" to display live radiation data.}
+        \resumeItem{ORNL Administrative App}
+          {Managed backend development for an administrative app dealing with sensitive personal data.}
+      \resumeItemListEnd
     \resumeSubheading
       {Collider}{Chattanooga, TN}
       {Cofounder, Head of Scientific Computing}{Dec 2015 - Present}
@@ -99,9 +463,9 @@
         \resumeItem{Orchid}
           {Next-Generation SLA-hybrid 3D printer. Wrote firmware for Orchid, including calibration interface, state machine manager, time-sensitive systems, interfaces with motors, light-engines, and other actuators/transducers. Firmare described was responsible for printing hundreds of customer parts over many machines.}
         \resumeItem{Meshprep}
-          {Core processing pipeline of geometric preparation algorithms for hybrid 3D print process, and associated webservice. Researched, iterated on, designed and implemented algorithms for converting arbitrary 3D geometries into material-efficient molds, generating connected fluid injection network geometries given fluid constraints, identifying surfaces in need of structural support, and generating structural supports. Additionally, designed and implemented algorithms to recommend user-selected part orientations and feature placement. Described work resulted in a pipeline which automatically processed hundreds of 3D models into printable files which were printed into customer parts, representing tens of thousands of dollars in revenue.}
+          {Core processing pipeline of geometric preparation algorithms for hybrid 3D print process, and associated webservice. Researched, iterated on, designed and implemented algorithms for converting arbitrary 3D geometries into material-efficient molds, generating injection network geometries given fluid constraints, identifying surfaces in need of structural support, and generating structural supports. Additionally, designed and implemented algorithms to recommend user-selected part orientations and feature placement. Described work resulted in a pipeline which automatically processed hundreds of 3D models into printable files which were printed into customer parts, representing tens of thousands of dollars in revenue.}
         \resumeItem{Smithy}
-          {Wrote in-browser interactive 3D print preparation UI, including custom WebGL shaders, part rotations, and 3D model feature selection tools. Resulted in a qualitative increase in user print preparation successes.}
+          {Wrote in-browser interactive 3D print preparation UI, with custom WebGL shaders, part rotations, and 3D model feature selection tools. Resulted in a qualitative increase in user print preparation successes.}
         \resumeItem{Gardener}
           {3D printer management API for print job tracking, model management, and print preparation. Was responsible for managing data and operations for hundreds of print jobs, from file upload to final layer printed.}
         \resumeItem{Raw-to-Repaired 3D Model Pipeline}
@@ -139,46 +503,58 @@
       {Keurig}{Knoxville, TN}
       {Controls Engineering Co-Op}{May 2013 - December 2014}
       \resumeItemListStart
-        \resumeItem{Degas Rack Augmentation}
-          {Lead developer on large-item inventory management and physical signaling system for high-throughput production facility. Resulted in ROI of 400\% over 1 year period.}
+        \resumeItem{Industrial Visualization System}
+          {Lead developer on large-item inventory management and physical signaling system for high-throughput production facility. Resulted in ROI of 400\% over 1 year period, and was adopted by other Keurig facilities.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 
 %-----------PROJECTS-----------------
-\section{Personal Projects}
+\section{Other Notable Projects}
   \resumeSubHeadingListStart
+    \resumeSubItem{Google Research Football: Multi-Agent PPO Reinforcement Learning}
+      {A project for school in which I used PPO (Proximal-Policy Optimization) to train a two-agent system to consistently beat the computer players in Google Research's Football implementation.}
     \resumeSubItem{Trimesh}
-      {Open-Source 3D Mesh processing library. Early adopter. Added marching cubes and vertex bookkeeping.}
+      % {Early contributor to the primary Open-Source 3D Mesh processing library in . Early adopter. Added marching cubes and vertex bookkeeping.}
+      {Early contributor to the primary Open-Source 3D Mesh processing library in python. Used by Pytorch3d, Blender, and many other libraries.}
+    \resumeSubItem{Supabase}
+      % {Early contributor to the primary Open-Source 3D Mesh processing library in . Early adopter. Added marching cubes and vertex bookkeeping.}
+      {Open source contributor.}
+    \resumeSubItem{Interrogato}
+      {Open-Source webapp using OpenAI's GPT-3 which assists users in researching academic papers.}
+    \resumeSubItem{Lab Grad}
+      {An open-source Typescript-reimplementation of Pytorch, complete with an in-browser network visualizer using Cytoscape.JS.}
     \resumeSubItem{Visualisa}
       {Open-Source in-browser 3D Audio Visualization website.}
-    \resumeSubItem{Dreamylabs}
-      {Open-Source .ipynb using State-of-the-Art image object identification algos (Deeplab) to edit photos.}
-    \resumeSubItem{React 360 Example Planets}
-      {Open-Source Demonstration app for React 360 (Facebook library for VR).}
+    % \resumeSubItem{Dreamylabs}
+    %   {Open-Source .ipynb using State-of-the-Art image object identification algos (Deeplab) to edit photos.}
+    % \resumeSubItem{React 360 Example Planets}
+    %   {Open-Source Demonstration app for React 360 (Facebook library for VR).}
   \resumeSubHeadingListEnd
 
 %
 %--------PROGRAMMING SKILLS------------
-\section{Technical Skills \textit{\small{(ordered by desc. mastery)}}}}
+\section{Technical Skills \textit{\small{(ordered by desc. mastery)}}}
  \resumeSubHeadingListStart
-     \resumeSubItem{Langs}{Python, Javascript, C++, C, C\#, Ruby, Golang, Bash, SQL, PHP, GLSL, Julia}
-     % \hfill
-     \resumeSubItem{Tech}{Numpy, Three.js, React(+360), Django, Trimesh, Scipy, Pandas, Graphql, WebGL, Rails, Keras, Tensorflow}
-     \resumeSubItem{Infra}{Git, Docker(+Compose), Pytest(+Pylint, +Cov), CircleCI, Cucumber, Jest }
-     % \resumeSubItem{Hardware}{: I2C, Raspberry Pi, Arduino}
-     % \textbf{Concepts}{: Deep Learning, Neural Networks, }
-     % \resumeSubItem{Web Technologies}{: HTML, CSS, ...}
-     %\resumeSubItem{Platforms}{AWS (Lambda, EC2), Google Cloud}
+     \resumeSubItem{Langs}{: Python, Typescript, Kotlin, C\#, C++, C, Ruby, Golang, Bash, SQL, PHP, GLSL}
+     \resumeSubItem{Tech}{: Numpy, Three.js, React (+360), Pytorch, Django, Trimesh, Scipy, Pandas, Graphql, WebGL, Rails, Keras, Tensorflow}
+     \resumeSubItem{Infra}{: Git, Docker (+Compose), Kubernetes (+Helm), Postgres, Pytest (+Pylint, +Cov), CircleCI, Cucumber, Jest }
+     \resumeSubItem{Hardware}{: I2C, Beaglebone Black, Motor Control, Basic Circuit Design (VHDL), Raspberry Pi, Arduino}
+     \resumeSubItem{Concepts}{: Reinforcement Learning, Proximal Policy Optimization (PPO), Random Forest, Deep Learning, Neural Networks, }
+     \resumeSubItem{Web Technologies}{: HTML, CSS, ...}
+     \resumeSubItem{Platforms}{Azure, AWS (Lambda, EC2), Google Cloud, Stripe, Twilio, Supabase, Azure Devops, Heroku, Vercel}
  \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
+      {Georgia Institute of Technology}{Remote}
+      {Masters in Computer Science, Machine Learning Specialization;}{August 2020 - August 2021 (Inc.)}
+    \resumeSubheading
       {University of Tennessee}{Knoxville, TN}
-      {Bachelor of Science in Computer Science (inc.);  GPA: 3.11}{Aug 2011 - May 2016}
+      {Bachelor of Science in Computer Science;}{Aug 2011 - May 2016, Aug 2019 - May 2020}
   \resumeSubHeadingListEnd
 
 
